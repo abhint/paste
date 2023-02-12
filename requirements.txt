@@ -1,0 +1,5 @@
+Flask~=2.2.2
+sqlmodel~=0.0.8
+SQLAlchemy~=1.4.41
+flask_restful
+Werkzeug

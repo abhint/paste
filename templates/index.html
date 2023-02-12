@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/darcula.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <script src="{{ url_for('static',filename='js/main.js') }}" defer></script>
+  <title>paste bin</title>
+</head>
+
+<body>
+  <header>
+    <section class="head">
+      <div class="title">
+        { paste bin }
+      </div>
+      <div class="save">
+        <span>S</span>
+      </div>
+      <div class="btn">
+        <section class="save">
+          <i class="fa-regular fa-floppy-disk"></i>
+        </section>
+      </div>
+    </section>
+  </header>
+  <div id="textArea"></div>
+
+<button id="re">
+  HELLO
+</button>
+<script>
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
