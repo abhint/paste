@@ -11,7 +11,7 @@ from sqlmodel import Field, Session, SQLModel, create_engine, select
 class DataBase(SQLModel, table=True):
     __tablename__: str = 'past'
     id: Optional[int] = Field(primary_key=True)
-    key: Optional[str]
+    key: str = Field(index=True)
     title: Optional[str]
     author: Optional[str] = None
     date: str = datetime.now()
@@ -29,8 +29,8 @@ class Past:
         SQLModel.metadata.create_all(self.engine)
 
     @staticmethod
-    def keyGenerator(content: str):
-        character = re.search(r"^[a-zA-Z0-9 ]*$", content)
+    def keyGenerator(content: str) -> str:
+        character = re.sub(r'[^\w]', '', content)  # https://stackoverflow.com/a/875978/11913751
         key = ShortUUID(character).random(8)
         return key
 
@@ -40,10 +40,9 @@ class Past:
             length=len(content["content"]),
             content=content["content"])
         )
-        return content
+        return 0
 
     def add(self, db: DataBase):
         with Session(self.engine) as session:
             session.add(db)
             session.commit()
-
