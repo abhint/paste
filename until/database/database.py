@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-# from shortuuid.django_fields import ShortUUIDField
+
 import re
+# from config import BASE_URL
 from shortuuid import ShortUUID
 from datetime import datetime
 from typing import Optional, Union
 from sqlalchemy.engine.url import URL
-from sqlmodel import Field, Session, SQLModel, create_engine, select
+from sqlmodel import Field, Session, SQLModel, create_engine, select, col
 
 
 class DataBase(SQLModel, table=True):
@@ -26,6 +27,7 @@ class Past:
                  url: Union[str, URL]):
         self.url = url
         self.engine = create_engine(url=self.url)
+        self.dataBase = DataBase
         SQLModel.metadata.create_all(self.engine)
 
     @staticmethod
@@ -46,3 +48,9 @@ class Past:
         with Session(self.engine) as session:
             session.add(db)
             session.commit()
+
+    def selectContent(self, key: str):
+        with Session(self.engine) as session:
+            statement = select(self.dataBase).where(col(self.dataBase.key) == key)
+            result = session.exec(statement).all()
+            return result
