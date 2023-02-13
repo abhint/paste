@@ -3,7 +3,7 @@ class Paste {
     this.btn = document.getElementById("save");
     this.urlText = document.querySelector(".key");
     this.editor = CodeMirror(document.getElementById("textArea"), {
-      placeholder: "Paste code, save and share the link!",
+      placeholder: "Paste your note",
       lineNumbers: true,
       theme: "darcula",
     });
@@ -26,12 +26,14 @@ class Paste {
   }
 
   async request(content) {
-    let responce = await fetch("api", {
+    let response = await fetch("api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ content }),
     });
-    console.log(await responce.json());
+    let result = await response.json()
+    console.log(result);
+    if (response.ok) return (window.location = `/${result.key}`);
   }
 
   save() {
