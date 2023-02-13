@@ -37,12 +37,14 @@ class Past:
         return key
 
     def sanitize(self, content: any) -> dict:
+        key_ = self.keyGenerator(content["content"])
         self.add(DataBase(
-            key=self.keyGenerator(content["content"]),
+            key=key_,
             length=len(content["content"]),
             content=content["content"])
         )
-        return 0
+
+        return key_
 
     def add(self, db: DataBase):
         with Session(self.engine) as session:
