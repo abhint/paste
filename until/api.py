@@ -12,19 +12,16 @@ parser.add_argument('content',
 
 class APIHandling(DB, Resource):
     def __init__(self):
-        super().__init__(url="sqlite:///abbb.db")
+        super().__init__()
 
     def post(self):
         try:
             args = parser.parse_args()
-            print(args)
         except HTTPException as err:
             error_message.update({"code": err.code})
             return abort(err.code, error_message)
 
-        self.sanitize(args)
-        return 0
-
+        return {"key": self.sanitize(args)}
 
     def get(self):
         return redirect("/")
