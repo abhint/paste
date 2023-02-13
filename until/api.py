@@ -1,5 +1,5 @@
 from flask import redirect
-from .database.database import Past
+from .database import DB
 from flask_restful import Resource, reqparse
 from werkzeug.exceptions import HTTPException, abort
 
@@ -10,7 +10,7 @@ parser.add_argument('content',
                     required=True)
 
 
-class APIHandling(Past, Resource):
+class APIHandling(DB, Resource):
     def __init__(self):
         super().__init__(url="sqlite:///abbb.db")
 
