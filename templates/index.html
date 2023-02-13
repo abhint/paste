@@ -8,42 +8,38 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://codemirror.net/5/lib/codemirror.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/darcula.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <script src="{{ url_for('static',filename='js/main.js') }}" defer></script>
-  <title>paste bin</title>
+  <title>Paste</title>
 </head>
 
 <body>
   <header>
     <section class="head">
-      <div class="title">
-        { paste bin }
+      <div class="column">
+        <a href="/">
+          <section class="title">Paste</section>
+        </a>
       </div>
-      <div class="save">
-        <span>S</span>
+      <div class="column">
+        <div class="key"></div>
       </div>
-      <div class="btn">
-        <section class="save">
+      <div class="column" id="save">
+        <section class="btn">
           <i class="fa-regular fa-floppy-disk"></i>
         </section>
       </div>
     </section>
   </header>
   <div id="textArea"></div>
-
-<button id="re">
-  HELLO
-</button>
-<script>
-
-
-
-
-</script>
-
-
+  <footer>
+    
+  </footer>
 </body>
-
 </html>
