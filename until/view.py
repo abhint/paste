@@ -1,4 +1,5 @@
 from .database import DB
+from flask import redirect
 from flask_restful import Resource, reqparse
 from werkzeug.exceptions import abort
 from .err import Error
@@ -15,6 +16,9 @@ class View(Resource, DB):
             return self.view_content(key)
         except Error as err:
             return abort(err.code, err.err400)
+
+    def get(self, key):
+        return redirect(f'/{key}')
 
     def view_content(self, key: str):
         result = self.selectContent(key)
