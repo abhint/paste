@@ -1,4 +1,5 @@
-from flask import redirect
+from flask import redirect, Response
+from typing import Optional, Union
 from .database import DB
 from flask_restful import Resource, reqparse
 from werkzeug.exceptions import HTTPException, abort
@@ -14,7 +15,7 @@ class APIHandling(DB, Resource):
     def __init__(self):
         super().__init__()
 
-    def post(self):
+    def post(self)-> Optional[Union[dict, HTTPException]]:
         try:
             args = parser.parse_args()
         except HTTPException as err:
@@ -23,5 +24,5 @@ class APIHandling(DB, Resource):
 
         return {"key": self.sanitize(args)}
 
-    def get(self):
+    def get(self) -> Response:
         return redirect("/")
