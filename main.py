@@ -9,6 +9,11 @@ api.add_resource(APIHandling, '/api')
 api.add_resource(View, '/api/p/<key>')
 
 
+@app.errorhandler(404)
+def err_(e):
+    return render_template("index.html"), 404
+
+
 @app.route('/<key>')
 def view_(key: str):
     print(key)
