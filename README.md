@@ -1,0 +1,1 @@
+<img alt="Paste" src="https://raw.githubusercontent.com/abhint/paste/update/static/img/paste.svg">
