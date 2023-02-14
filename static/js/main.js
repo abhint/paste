@@ -47,7 +47,7 @@ class Paste {
   async load() {
     let urlPath = window.location.pathname;
     if (urlPath === "/") return;
-    let response = await fetch(`/api/p/${urlPath}`, {
+    let response = await fetch(`/api/p${urlPath}`, {
       method: "POST",
     });
 
