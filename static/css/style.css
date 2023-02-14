@@ -28,6 +28,9 @@ body {
   padding-top: 1%;
   padding-right: 50%;
 }
+.title img{
+  width: 50%;
+}
 .key {
   color: #a9b7c6;
   font-style: italic;
