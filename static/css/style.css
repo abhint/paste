@@ -28,6 +28,9 @@ body {
   padding-top: 1%;
   padding-right: 50%;
 }
+.title img{
+  width: 50%;
+}
 .key {
   color: #a9b7c6;
   font-style: italic;
@@ -59,7 +62,7 @@ a:active {
   height: 100%;
   font-family: inherit;
 }
-footer{
+footer {
   position: fixed;
   bottom: 0;
   background-color: #30302f;
@@ -68,26 +71,26 @@ footer{
 }
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #f9d342 #30302f;
-  }
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #f9d342 #30302f;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 16px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #30302f;
-  }
+*::-webkit-scrollbar-track {
+  background: #30302f;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #f9d342;
-    border-radius: 10px;
-    border: 3px solid #30302f;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #f9d342;
+  border-radius: 10px;
+  border: 3px solid #30302f;
+}
 
 /* Hide cursor in readonly */
 .readonly .CodeMirror-cursor {

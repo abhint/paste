@@ -8,8 +8,8 @@ parser = reqparse.RequestParser(bundle_errors=True)
 
 
 class View(Resource, DB):
-    def __int__(self):
-        super().__int__()
+    def __init__(self):
+        super().__init__()
 
     def post(self, key):
         try:
