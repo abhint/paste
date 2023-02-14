@@ -15,7 +15,7 @@ class APIHandling(DB, Resource):
     def __init__(self):
         super().__init__()
 
-    def post(self)-> Optional[Union[dict, HTTPException]]:
+    def post(self) -> Optional[Union[dict, HTTPException]]:
         try:
             args = parser.parse_args()
         except HTTPException as err:

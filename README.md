@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="Paste" src="https://raw.githubusercontent.com/abhint/paste/update/static/img/paste.svg" width="50%">
+<img alt="Paste" src="https://raw.githubusercontent.com/abhint/paste/master/static/img/paste.svg" width="50%">
 <p align="center">
 
 # Paste
