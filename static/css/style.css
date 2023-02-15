@@ -28,7 +28,7 @@ body {
   padding-top: 1%;
   padding-right: 50%;
 }
-.title img{
+.title img {
   width: 50%;
 }
 .key {
@@ -68,6 +68,23 @@ footer {
   background-color: #30302f;
   height: 1.6rem;
   width: 100%;
+}
+.footer-main {
+  display: flex;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  color: #a9b7c6;
+}
+.footer-column {
+  flex: 50%;
+}
+.footer-made {
+  padding: 0.5%;
+  padding-left: 7%;
+}
+.footer-about {
+  padding: 0.5%;
+  padding-left: 70%;
 }
 
 /* ===== Scrollbar CSS ===== */
