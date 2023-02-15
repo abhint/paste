@@ -4,7 +4,7 @@
 
 # Paste
 
-### The paste is an open-source and free web application. The Paste allows you to share the link of your text content with anyone. 
+The paste is an open-source and free web application. The Past allows users to upload and share text content online.
 
 ## Features
 - Lightweight Web Application
