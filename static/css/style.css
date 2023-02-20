@@ -21,6 +21,9 @@ body {
   padding-top: 1%;
   padding-left: 50%;
 }
+.btn:hover{
+  color: #f9d342;
+}
 .title {
   font-family: "Gochi Hand", cursive;
   color: #f9d342;
@@ -38,6 +41,11 @@ body {
   font-size: 70%;
   font-family: "Ubuntu", sans-serif;
 }
+
+
+
+
+
 
 a:link {
   text-decoration: none;
