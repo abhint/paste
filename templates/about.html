@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static',filename='favicon.ico') }}" rel="shortcut icon" />
+    <link rel="stylesheet" href="https://codemirror.net/5/lib/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" ></script>
+    <title>Paste</title>
+</head>
+
+<body>
+    <header>
+        <section class="head">
+            <div class="column">
+                <a href="/">
+                    <section class="title">
+                        <img src="{{ url_for('static',filename='img/paste.svg') }}" alt="Paste" />
+                    </section>
+                </a>
+            </div>
+            <div class="column">
+                <div class="key"></div>
+            </div>
+            <div class="column" id="save">
+                <section class="btn">
+                    <i class="fa-regular fa-floppy-disk"></i>
+                </section>
+            </div>
+        </section>
+    </header>
+    <div id="about">
+    </div>
+    <footer>
+        <section class="footer-main">
+            <section class="footer-column">
+                <div class="footer-made">
+                    Made with
+                    <i style="color: #f9d342;" class="fa-solid fa-heart"></i>
+                    by <a href="https://github.com/abhint/paste/" style="color: #f9d342;">Abhijith</a>
+                </div>
+            </section>
+            <section class="footer-column">
+                <div class="footer-about">
+                    <i style="color: #f9d342;" class="fa-solid fa-id-card"></i>
+                    <a href="/about.php">About</a>
+                    <a href="https://github.com/abhint/paste">GitHub</a>
+                </div>
+            </section>
+        </section>
+    </footer>
+    <script src="{{ url_for('static',filename='js/about.js') }}" defer></script>
+</body>
+
+
+</html>

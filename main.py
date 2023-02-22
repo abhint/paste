@@ -14,6 +14,12 @@ def err_(e):
     return render_template("index.html"), 404
 
 
+@app.route('/about.php')
+def about_():
+    return render_template("about.html")
+
+
+
 @app.route('/<key>')
 def view_(key: str):
     print(key)

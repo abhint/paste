@@ -8,10 +8,6 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
   <link href="{{ url_for('static',filename='favicon.ico') }}" rel="shortcut icon" />
   <link rel="stylesheet" href="https://codemirror.net/5/lib/codemirror.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
@@ -52,9 +48,8 @@
       </section>
       <section class="footer-column">
         <div class="footer-about">
-          <a href="/">
-            <i style="color: #f9d342;" class="fa-solid fa-id-card"></i> About
-          </a>
+          <i style="color: #f9d342;" class="fa-solid fa-id-card"></i>
+          <a href="/about.php">About</a>
            <a href="https://github.com/abhint/paste">GitHub</a>
         </div>
       </section>
