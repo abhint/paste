@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
 
 body {
   margin: 0;
@@ -25,7 +24,7 @@ body {
   padding-top: 1%;
   padding-left: 50%;
 }
-.btn:hover{
+.btn i:hover {
   color: #f9d342;
 }
 .title {
@@ -46,11 +45,6 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
-
-
-
-
-
 a:link {
   text-decoration: none;
 }
@@ -70,7 +64,7 @@ a:active {
   bottom: 1.6rem;
   width: 100%;
 }
-#about{
+#about {
   position: absolute;
   line-height: 1.4em;
   top: 3rem;
@@ -79,8 +73,14 @@ a:active {
   background-color: #292826;
   color: #a9b7c6;
 }
-#about *{
+#about * {
   margin: 10px;
+}
+
+code {
+  background-color: #30302f;
+  padding: 10px;
+  border-radius: 5px;
 }
 .CodeMirror {
   height: 100%;
@@ -111,10 +111,9 @@ footer {
   padding-left: 70%;
 }
 
-.footer-about a{
+.footer-about a {
   color: #a9b7c6;
 }
-
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
