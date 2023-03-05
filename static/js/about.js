@@ -1,11 +1,18 @@
-document.getElementById("about").innerHTML = marked.parse(
-  "# Paste \n \
-    The paste is an open-source and free web application. \
-    The Past allows users to upload and share text content online.\n \
-    ## Features\n \
-    - Lightweight Web Application \
-    - Paste your content anonymously. \
-    - Content can be saved using the API. \
-    - Easy to use as it has a simple interface.\
-    - One-click URL copy."
-);
+class AboutSection {
+  constructor() {
+    this.about = document.getElementById("about");
+  }
+  async getReadme() {
+    let response = await fetch(
+      "https://api.github.com/repos/abhint/paste/contents/README.md?ref=master"
+    );
+    let content = await response.text();
+    this.about.innerHTML = marked.parse(content);
+    console.log();
+  }
+}
+
+window.addEventListener("DOMContentLoaded", async (_) => {
+  let aboutSection = new AboutSection();
+  aboutSection.getReadme();
+});
