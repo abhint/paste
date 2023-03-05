@@ -14,6 +14,12 @@ def err_(e):
     return render_template("index.html"), 404
 
 
+@app.route('/about')
+def about_():
+    return render_template("about.html")
+
+
+
 @app.route('/<key>')
 def view_(key: str):
     print(key)
@@ -26,4 +32,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4000, host="0.0.0.0")
+    app.run(host="0.0.0.0")

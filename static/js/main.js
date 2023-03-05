@@ -42,6 +42,7 @@ class Paste {
       if (!content) return;
       this.request(content);
     });
+    console.log("Hello")
   }
 
   async load() {

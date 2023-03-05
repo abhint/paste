@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
 body {
   margin: 0;
 }
@@ -20,6 +23,9 @@ body {
   color: #a9b7c6;
   padding-top: 1%;
   padding-left: 50%;
+}
+.btn i:hover {
+  color: #f9d342;
 }
 .title {
   font-family: "Gochi Hand", cursive;
@@ -58,6 +64,24 @@ a:active {
   bottom: 1.6rem;
   width: 100%;
 }
+#about {
+  position: absolute;
+  line-height: 1.4em;
+  top: 3rem;
+  bottom: 1.6rem;
+  width: 100%;
+  background-color: #292826;
+  color: #a9b7c6;
+}
+#about * {
+  margin: 10px;
+}
+
+code {
+  background-color: #30302f;
+  padding: 10px;
+  border-radius: 5px;
+}
 .CodeMirror {
   height: 100%;
   font-family: inherit;
@@ -85,6 +109,10 @@ footer {
 .footer-about {
   padding: 0.5%;
   padding-left: 70%;
+}
+
+.footer-about a {
+  color: #a9b7c6;
 }
 
 /* ===== Scrollbar CSS ===== */
