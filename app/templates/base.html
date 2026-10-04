@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>{% block title %}Paste{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/paste.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('pages.pygments_css') }}">
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('pages.index') }}"><img src="{{ url_for('static', filename='img/paste.svg') }}" alt="">Paste</a>
+    <nav class="site-nav">
+      <button id="theme" class="btn icon" type="button" aria-label="Switch light or dark theme">◐</button>
+    </nav>
+  </header>
+  <main class="wrap">{% block content %}{% endblock %}</main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ p.title or 'Paste ' ~ p.id }}{% endblock %}
+{% block content %}
+<h1 class="title">{{ p.title or 'Untitled paste' }}</h1>
+<p class="meta">{{ lang_name }} · {{ lines }} line{{ '' if lines == 1 else 's' }} · {{ p.views }} view{{ '' if p.views == 1 else 's' }} · Created {{ created }} · Expires {{ expires }}</p>
+
+<div class="share">
+  <input id="url" type="text" readonly aria-label="Paste link" value="{{ request.url }}">
+  <button class="btn btn-primary" type="button" data-copy-text="{{ request.url }}">Copy link</button>
+</div>
+
+<div class="toolbar">
+  <button class="btn btn-sm" type="button" data-copy-fetch="{{ url_for('pages.raw', pid=p.id) }}">Copy text</button>
+  <a class="btn btn-sm" href="{{ url_for('pages.raw', pid=p.id) }}">Raw</a>
+  <a class="btn btn-sm" href="{{ url_for('pages.raw', pid=p.id, download=1) }}">Download</a>
+  <a class="btn btn-sm" href="{{ url_for('pages.index') }}">New paste</a>
+  {% if owner %}
+  <form method="post" action="{{ url_for('pages.delete', pid=p.id) }}" data-confirm="Delete this paste for good?">
+    <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+  </form>
+  {% endif %}
+</div>
+
+<div class="card">{{ html|safe }}</div>
+{% endblock %}
