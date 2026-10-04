@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Paste: share text online{% endblock %}
+{% block content %}
+<div class="intro">
+  <h1>Paste text, get a link</h1>
+  <p>No account needed. Drop a file onto the box or type below.</p>
+</div>
+{% if err %}<div class="flash" role="alert">{{ err }}</div>{% endif %}
+<form method="post" action="{{ url_for('pages.index') }}">
+  <div class="card">
+    <div class="fields">
+      <div><label for="title">Title (optional)</label>
+        <input id="title" name="title" type="text" maxlength="100" value="{{ form.get('title', '') }}"></div>
+      <div><label for="lang">Language</label>
+        <select id="lang" name="lang">
+          {% for label, alias in langs.items() %}
+          <option value="{{ alias }}" {{ 'selected' if form.get('lang', 'auto') == alias }}>{{ label }}</option>
+          {% endfor %}
+        </select></div>
+      <div><label for="expires">Expires</label>
+        <select id="expires" name="expires">
+          {% for key, (label, _) in expiry.items() %}
+          <option value="{{ key }}" {{ 'selected' if form.get('expires', default_expiry) == key }}>{{ label }}</option>
+          {% endfor %}
+        </select></div>
+    </div>
+    <textarea id="editor" class="editor" name="content" placeholder="Paste or type here" spellcheck="false" required autofocus>{{ form.get('content', '') }}</textarea>
+    <div class="counter" id="counter" data-max-kb="{{ max_kb }}"></div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" type="submit">Create paste</button>
+  </div>
+  <p class="hint">Press Ctrl or ⌘ + Enter to create. Max {{ max_kb }} KB.</p>
+</form>
+
+<details class="hint">
+  <summary>Use from the command line</summary>
+  <pre class="snip">cat file.txt | curl -H "Content-Type: text/plain" --data-binary @- {{ request.host_url }}api/paste</pre>
+</details>
+{% endblock %}

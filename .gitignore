@@ -1,7 +1,17 @@
-# database
+# Local SQLite databases used during development
 *.db
 
+# IDE settings
 .idea/
+
+# Local environment variables; keep example configuration trackable
+.env
+.env.*
+!.env.example
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -106,8 +116,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments
-.env
+# Python virtual environments
 .venv
 env/
 venv/
@@ -132,5 +141,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-.db
-/test.py

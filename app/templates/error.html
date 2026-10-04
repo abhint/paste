@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Error {{ code }}{% endblock %}
+{% block content %}
+<div class="err-page">
+  <h1 class="title">{{ code }}</h1>
+  <p class="meta">{{ msg }}</p>
+  <p><a class="btn btn-primary" href="{{ url_for('pages.index') }}">Create a new paste</a></p>
+</div>
+{% endblock %}
